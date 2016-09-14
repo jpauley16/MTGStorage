@@ -6,20 +6,20 @@
 
 ### Add to Library
 
-![Add to Library](DesignDocuments/wireframes/Add to Library.png)
+![Add to Library](wireframes/Add to Library.png)
 
 ### Remove from Library
 
-![Remove from Library](DesignDocuments/wireframes/Remove from Library.png)
+![Remove from Library](wireframes/Remove from Library.png)
 
 ### Search Library
 
-![Search Library](DesignDocuments/wireframes/Search Library.png)
+![Search Library](wireframes/Search Library.png)
 
 ### Dialog for Sign In
 
-![Search all MTG](DesignDocuments/wireframes/Search all MTG.png)
+![Search all MTG](wireframes/Search all MTG.png)
 
 ### About Page
 
-![About Page](DesignDocuments/wireframes/About.png)
+![About Page](wireframes/About.png)
