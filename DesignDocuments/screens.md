@@ -16,7 +16,7 @@
 
 ![Search Library](wireframes/Search Library.png)
 
-### Dialog for Sign In
+### Search all MTG Cards in print
 
 ![Search all MTG](wireframes/Search all MTG.png)
 
