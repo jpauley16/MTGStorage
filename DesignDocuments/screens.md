@@ -2,7 +2,7 @@
 
 ### Home Page aka News and Events
 
-![Home Page](DesignDocuments/wireframes/Home.png)
+![Home Page](wireframes/Home.png)
 
 ### Add to Library
 
