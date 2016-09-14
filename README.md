@@ -6,6 +6,6 @@ Since 1995, I have been playing Magic the Gathering, which is an ever expanding,
 
 Moxmania.com is an Magic the Gathering (MTG) commerce site where you can search cards and add them to your cart and you can buy them over the internet or in store, located on Odana Rd in Madison WI, pending you are a subscriber to their services. Though my application is not an e-commerce site, I admire the card searching feature, format of a card query search, and the basic web layout.
 
-
+[Moxmania.com home screen](images/moxmania.png)
 
 [Screen Desgin](DesignDocuments/screens.md)
