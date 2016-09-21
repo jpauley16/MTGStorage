@@ -10,3 +10,4 @@
 | 9/14/2016 | Read Week 2 - Log4j tutorial | .5 hr | |
 | 9/19/2016 | Worked on Exercise (Week 3) | .5 hr | |
 | 9/20/2016 | Worked on Exercise (Week 3) | 4 hr | |
+| 9/20/2016 | Created database for project and project structure in IntelliJ | 1.5 hr | having issues adding libraries |
