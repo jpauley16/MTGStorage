@@ -1,1 +1,0 @@
-Test resources, such as properties files will live here.
