@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MTGStorage:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="mtgstorage.war">
+      <element id="artifact" artifact-name="MTGStorage:war exploded" />
+    </root>
+  </artifact>
+</component>
