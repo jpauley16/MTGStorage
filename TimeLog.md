@@ -9,3 +9,4 @@
 | 9/13/2016 | Worked on Project Plan, set up project folder/added directories | 1.5 hr| |
 | 9/14/2016 | Read Week 2 - Log4j tutorial | .5 hr | |
 | 9/19/2016 | Worked on Exercise (Week 3) | .5 hr | |
+| 9/20/2016 | Worked on Exercise (Week 3) | 4 hr | |
