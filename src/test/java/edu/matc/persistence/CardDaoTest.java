@@ -1,6 +1,7 @@
 package edu.matc.persistence;
 
 import edu.matc.entity.Card;
+import org.hibernate.Session;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,10 +24,17 @@ public class CardDaoTest {
     }
 
     @Test
-    public void getAllCardss() throws Exception {
+    public void getAllCards() throws Exception {
         List<Card> cards = dao.getAllCards();
 
         assertTrue(cards.size() > 0);
+    }
+
+    @Test
+    public void getCard() throws Exception {
+        Card card = dao.getCard(1);
+
+        assertNotNull("Null. No card by that id in table", card);
     }
 
 }
