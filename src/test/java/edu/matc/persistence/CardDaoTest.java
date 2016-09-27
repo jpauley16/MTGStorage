@@ -37,4 +37,39 @@ public class CardDaoTest {
         assertNotNull("Null. No card by that id in table", card);
     }
 
+    @Test
+    public void deleteCard() throws Exception {
+        dao.deleteCard(1);
+
+        assertNotNull("Null. No card by that card key");
+    }
+
+    @Test
+    public void addCard() throws Exception {
+        Card card = new Card();
+        card.setName("");
+        card.setManaCost("");
+        card.setSuperType("");
+        card.setSubtype("");
+        card.setRarity("");
+        card.setDescription("");
+        card.setPower("");
+        card.setToughness("");
+        card.setColor("");
+        card.setQty();
+
+        int cardKey = dao.addCard(card);
+
+        assertEquals("Id equals 2 for new user", 4, cardKey);
+    }
+
+    @Test
+    public void updateCard() throws Exception {
+        Card card = new Card();
+
+        dao.updateCard(card);
+
+        assertTrue("Changed name is " , card.getName().equals(""));
+    }
+
 }
