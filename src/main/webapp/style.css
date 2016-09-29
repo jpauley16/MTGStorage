@@ -1,0 +1,11 @@
+
+
+#newsContainer{display: inline-block; width: 45%; height: 50%;}
+
+#eventsContainer{display: inline-block; width: 45%; height: 50%;}
+
+#newsHeader {text-align: center;}
+
+#eventsHeader {text-align: center;}
+
+.headerLinks {padding-left: 11%;}
