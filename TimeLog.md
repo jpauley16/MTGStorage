@@ -13,10 +13,10 @@
 | 9/20/2016 | Created database for project and project structure in IntelliJ | 1.5 hr | having issues adding libraries |
 | 9/21/2016 | Had to redo project structure | 1 hr | |
 | 9/25/2016 | Trying to get junit to read tests - initialization error | .5hr | fixed |
-| 9/25/2016 |  |  | |
-|  |  |  | |
-|  |  |  | |
-|  |  |  | |
+| 9/25/2016 | Add, Delete, Update DAO functionality | 1hr | |
+| 9/27/2016 | index.html created/worked on | .5hr | |
+| 9/27/2016 | Making jsp template | 1hr | still in progress |
+| 9/28/2016 | Working with bootstrap | .5hr | during work lunch |
 |  |  |  | |
 |  |  |  | |
 |  |  |  | |
