@@ -8,17 +8,17 @@
             <li role="presentation">
                 <a href="index.jsp" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
             <li role="presentation">
-                <a href="#searchMTGCards" aria-controls="searchMTGCards" role="tab" data-toggle="tab">Search MTG Cards</a></li>
+                <a href="searchMTGCards.jsp" aria-controls="searchMTGCards" role="tab" data-toggle="tab">Search MTG Cards</a></li>
             <li role="presentation">
-                <a href="#searchLibrary" aria-controls="searchLibrary" role="tab" data-toggle="tab">Search Library</a></li>
+                <a href="searchLibrary.jsp" aria-controls="searchLibrary" role="tab" data-toggle="tab">Search Library</a></li>
             <li role="presentation">
-                <a href="#addToLibrary" aria-controls="addToLibrary" role="tab" data-toggle="tab">Add To Library</a></li>
+                <a href="addToLibrary.jsp" aria-controls="addToLibrary" role="tab" data-toggle="tab">Add To Library</a></li>
             <li role="presentation">
-                <a href="#removeFromLibrary" aria-controls="removeFromLibrary" role="tab" data-toggle="tab">Remove From Library</a></li>
+                <a href="removeFromLibrary.jsp" aria-controls="removeFromLibrary" role="tab" data-toggle="tab">Remove From Library</a></li>
             <li role="presentation">
-                <a href="#about" aria-controls="about" role="tab" data-toggle="tab">About</a></li>
+                <a href="about.jsp" aria-controls="about" role="tab" data-toggle="tab">About</a></li>
             <li role="presentation">
-                <a href="#loginsignup" aria-controls="loginsignup" role="tab" data-toggle="tab">Login/Sign Up!</a></li>
+                <a href="loginSignup.jsp" aria-controls="loginsignup" role="tab" data-toggle="tab">Login/Sign Up!</a></li>
         </ul>
     </div>
 </div>

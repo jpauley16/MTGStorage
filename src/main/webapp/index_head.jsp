@@ -1,6 +1,8 @@
 <head>
     <title>${pageTitle}</title>
     <meta charset="utf-8">
+    <meta name="generator" content=
+            "HTML Tidy for Java (vers. 2009-12-01), see jtidy.sourceforge.net">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
