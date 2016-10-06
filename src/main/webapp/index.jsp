@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
-<c:set var="pageTitle" value="Home" scope="request" />
+<c:set var="pageTitle" value="Home" scope="session" />
 
 <c:import url="index_head.jsp" />
 
