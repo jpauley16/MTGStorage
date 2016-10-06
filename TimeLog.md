@@ -17,6 +17,7 @@
 | 9/27/2016 | index.html created/worked on | .5hr | |
 | 9/27/2016 | Making jsp template | 1hr | still in progress |
 | 9/28/2016 | Working with bootstrap | .5hr | during work lunch |
-|  |  |  | |
+| 10/03/2016 | Worked on project (Work) | .5hr | |
+| 10/04/2016 | Worked on and finished week's exercise | 2.5hr | |
 |  |  |  | |
 |  |  |  | |
