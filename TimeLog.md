@@ -19,5 +19,12 @@
 | 9/28/2016 | Working with bootstrap | .5hr | during work lunch |
 | 10/03/2016 | Worked on project (Work) | .5hr | |
 | 10/04/2016 | Worked on and finished week's exercise | 2.5hr | |
+| 10/10/2016 | Worked on Activity 1 & 2 (Week 6) | .5hr | During work lunch |
+| 10/11/2016 | Worked on Activity 3 (Week 6) | .5hr | During work lunch |
+| 10/11/2016 | Worked on Activity 3 (Week 6) | 1.5hr | Had some issues but worked it out |
+| 10/11/2016 | Found a presentation topic, signed up for Madison Indies meetup | 1hr | |
+| 10/12/2016 | Finished Activity 3 (Week 6), Pushed activities to GitHub | 1hr | Before class |
+|  |  |  | |
+|  |  |  | |
 |  |  |  | |
 |  |  |  | |
