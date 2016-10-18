@@ -411,14 +411,6 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="quantity">Qty</label>
-                    <input type="text" class="form-control" id="quantity">
-                </div>
-            </div>
-        </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
