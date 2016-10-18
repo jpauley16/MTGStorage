@@ -4,7 +4,7 @@
 </div>
 <div class="col-md-12">
     <ul class="nav nav-tabs">
-        <li class="active"><a href="index.jsp">Home</a></li>
+        <li><a href="index.jsp">Home</a></li>
         <li><a href="searchMTGCards.jsp">Search MTG Cards</a></li>
         <li><a href="searchLibrary.jsp">Search Library</a></li>
         <li><a href="addToLibrary.jsp">Add To Library</a></li>
