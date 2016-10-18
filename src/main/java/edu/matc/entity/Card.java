@@ -34,9 +34,6 @@ public class Card {
     @Column(name ="Rarity")
     private String rarity;
 
-    @Column(name ="Description")
-    private String description;
-
     @Column(name ="Power")
     private String power;
 
@@ -55,15 +52,14 @@ public class Card {
     }
 
     public Card(int cardKey, String name, String manaCost, String superType,
-                String subtype, String rarity, String description, String power,
-                String toughness, String color, int qty) {
+                String subtype, String rarity, String power, String toughness,
+                String color, int qty) {
         this.cardKey = cardKey;
         this.name = name;
         this.manaCost = manaCost;
         this.superType = superType;
         this.subtype = subtype;
         this.rarity = rarity;
-        this.description = description;
         this.power = power;
         this.toughness = toughness;
         this.color = color;
@@ -118,14 +114,6 @@ public class Card {
         this.rarity = rarity;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getPower() {
         return power;
     }
@@ -167,7 +155,6 @@ public class Card {
                 ", superType='" + superType + '\'' +
                 ", subtype='" + subtype + '\'' +
                 ", rarity='" + rarity + '\'' +
-                ", description='" + description + '\'' +
                 ", power='" + power + '\'' +
                 ", toughness='" + toughness + '\'' +
                 ", color='" + color + '\'' +

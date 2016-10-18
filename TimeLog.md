@@ -24,7 +24,7 @@
 | 10/11/2016 | Worked on Activity 3 (Week 6) | 1.5hr | Had some issues but worked it out |
 | 10/11/2016 | Found a presentation topic, signed up for Madison Indies meetup | 1hr | |
 | 10/12/2016 | Finished Activity 3 (Week 6), Pushed activities to GitHub | 1hr | Before class |
-|  |  |  | |
-|  |  |  | |
-|  |  |  | |
+| 10/15/2016 | Added Form to addToLibrary.jsp | 2hr | Need to fix Div placements (redundant), styling needs work |
+| 10/15/2016 | Attended meetup | 4hr | |
+| 10/16/2016 | Working on presentation | 2hr | |
 |  |  |  | |

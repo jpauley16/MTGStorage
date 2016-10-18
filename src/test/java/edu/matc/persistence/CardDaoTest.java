@@ -53,7 +53,6 @@ public class CardDaoTest {
         card.setSuperType("");
         card.setSubtype("");
         card.setRarity("");
-        card.setDescription("");
         card.setPower("");
         card.setToughness("");
         card.setColor("");

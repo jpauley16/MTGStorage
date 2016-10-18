@@ -88,7 +88,6 @@ public class CardDao {
             updatedCard.setSuperType(card.getSuperType());
             updatedCard.setSubtype(card.getSubtype());
             updatedCard.setRarity(card.getRarity());
-            updatedCard.setDescription(card.getDescription());
             updatedCard.setPower(card.getPower());
             updatedCard.setToughness(card.getToughness());
             updatedCard.setColor(card.getColor());
