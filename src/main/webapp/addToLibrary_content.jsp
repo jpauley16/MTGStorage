@@ -20,6 +20,19 @@
             </div>
             <div class="col-md-4 row">
                 <div class="form-group">
+                    <label for="colorType">Select Color</label>
+                    <select class="form-control" id="colorType">
+                        <option>Black</option>
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Multicolored</option>
+                        <option>Red</option>
+                        <option>White</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4 row">
+                <div class="form-group">
                     <label for="superType">Select Super-Type</label>
                     <select class="form-control" id="superType">
                         <option>Basic</option>
