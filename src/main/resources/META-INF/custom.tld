@@ -1,0 +1,12 @@
+<taglib>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>2.0</jsp-version>
+    <short-name>Tag Lib Demo</short-name>
+
+    <uri>http://matc.edu/taghandler</uri>
+    <tag>
+        <name>Hello</name>
+        <tag-class>edu.matc.taghandler.CustomHeaderTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+</taglib>
