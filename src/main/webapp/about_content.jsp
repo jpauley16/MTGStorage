@@ -1,7 +1,9 @@
-<div class="col-md-12">
-    <h1>About</h1>
+<div class="container">
+    <div class="col-md-12">
+        <h1 id="pageHeader">About</h1>
+    </div>
 </div>
-<div id="contentContainer" class="col-md-12">
+<div class="container">
     <div id="aboutContainer" class="col-md-6">
         <p>Cras quis aliquam tortor. Donec fringilla est id lacus dignissim, vel imperdiet justo congue. Ut et varius
             felis, sed suscipit nulla. Sed aliquet nibh non libero varius, placerat congue odio scelerisque. Donec
@@ -12,4 +14,9 @@
             pellentesque id. Fusce a feugiat libero. Donec a lectus eget tortor congue placerat ut non justo.
             Suspendisse nec libero eros. Suspendisse eget blandit nunc. Integer at malesuada nunc, sed congue quam. </p>
     </div>
+    <div id="pictureContainer" class="col-md-6">
+
+    </div>
+
 </div>
+

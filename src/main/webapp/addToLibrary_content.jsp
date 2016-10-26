@@ -1,37 +1,30 @@
-<div class="col-md-12">
-    <h2>Add to Library</h2>
+<div class="container">
+    <div class="col-md-12">
+        <h2 id="pageHeader">Add to Library</h2>
+    </div>
 </div>
 
-<div id="formContainer">
-    <form id="addToLibraryForm">
-        <form id="searchLibraryForm">
-            <div class="col-md-4 row">
+<div class="container">
+    <form id="searchLibraryForm">
+        <div class="row">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label for="name">Card Name</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter Card Name">
                 </div>
             </div>
-            <div class="col-md-4 row">
+        </div>
+        <div class="row">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label for="cost">Mana Cost</label>
                     <input type="text" class="form-control" id="cost" placeholder="Mana Cost">
                     <small id="costHelp" class="form-text text-muted">Bl=Black, B=Blue, R=Red, W=White, G=Green, C=Colorless, X=X</small>
                 </div>
             </div>
-            <div class="col-md-4 row">
-                <div class="form-group">
-                    <label for="colorType">Select Color</label>
-                    <select class="form-control" id="colorType">
-                        <option>Black</option>
-                        <option>Blue</option>
-                        <option>Green</option>
-                        <option>Multicolored</option>
-                        <option>Red</option>
-                        <option>White</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-4 row">
+        </div>
+        <div class="row">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label for="superType">Select Super-Type</label>
                     <select class="form-control" id="superType">
@@ -44,7 +37,9 @@
                     </select>
                 </div>
             </div>
-            <div class="col-md-4 row">
+        </div>
+        <div class="row">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label for="subType">Select Sub-Type</label>
                     <select class="form-control" id="subType">
@@ -364,7 +359,9 @@
                     </select>
                 </div>
             </div>
-            <div class="col-md-4 row">
+        </div>
+        <div class="row">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label for="type">Card Type</label>
                     <select class="form-control" id="type">
@@ -384,7 +381,9 @@
                     </select>
                 </div>
             </div>
-            <div class="col-md-4 row">
+        </div>
+        <div class="row">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label for="rarity">Rarity</label>
                     <select class="form-control" id="rarity">
@@ -395,26 +394,26 @@
                     </select>
                 </div>
             </div>
-            <div class="col-md-4 row">
+        </div>
+        <div class="row">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label for="power">Power</label>
                     <input type="text" class="form-control" id="power">
                     <small id="powerHelp" class="form-text text-muted">If power is represented by X, please enter X.</small>
                 </div>
             </div>
-            <div class="col-md-4 row">
+        </div>
+        <div class="row">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label for="toughness">Toughness</label>
                     <input type="text" class="form-control" id="toughness">
                     <small id="toughnessHelp" class="form-text text-muted">If toughness is represented by X, please enter X.</small>
                 </div>
             </div>
-            <div class="col-md-4 row">
-                <div class="form-group">
-                    <label for="quantity">Qty</label>
-                    <input type="text" class="form-control" id="quantity">
-                </div>
-            </div>
+        </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

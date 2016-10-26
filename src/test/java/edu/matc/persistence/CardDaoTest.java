@@ -1,5 +1,4 @@
-/**
-package edu.matc.persistence;
+/*package edu.matc.persistence;
 
 import edu.matc.entity.Card;
 import org.hibernate.Session;
@@ -13,6 +12,8 @@ import static org.junit.Assert.*;
 /**
  * Created by netherskub on 9/21/16.
 
+/*
+*
 
 public class CardDaoTest {
 
@@ -56,11 +57,11 @@ public class CardDaoTest {
         card.setPower("");
         card.setToughness("");
         card.setColor("");
-        card.setQty();
+        card.setQty(1);
 
         int cardKey = dao.addCard(card);
 
-        assertEquals("Id equals 2 for new user", 4, cardKey);
+        assertEquals("Id equals 2 for new card", 4, cardKey);
     }
 
     @Test
