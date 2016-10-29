@@ -5,12 +5,12 @@
 </div>
 
 <div class="container">
-    <form id="searchLibraryForm" action="card-add-servlet" method="post">
+    <form id="searchLibraryForm" action="/card-add-servlet" method="POST">
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="name">Card Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter Card Name">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter Card Name">
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="cost">Mana Cost</label>
-                    <input type="text" class="form-control" id="cost" placeholder="Mana Cost">
+                    <input type="text" class="form-control" name="cost" id="cost" placeholder="Mana Cost">
                     <small id="costHelp" class="form-text text-muted">Bl=Black, B=Blue, R=Red, W=White, G=Green, C=Colorless, X=X</small>
                 </div>
             </div>
@@ -27,7 +27,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="superType">Select Super-Type</label>
-                    <select class="form-control" id="superType">
+                    <select class="form-control" name="superType" id="superType">
                         <option>Basic</option>
                         <option>Legendary</option>
                         <option>Ongoing</option>
@@ -43,7 +43,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="subType">Select Sub-Type</label>
-                    <select class="form-control" id="subType">
+                    <select class="form-control" name="subType" id="subType">
                         <option>advisor</option>
                         <option>aetherborn</option>
                         <option>ajani</option>
@@ -365,7 +365,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="cardType">Card Type</label>
-                    <select class="form-control" id="cardType">
+                    <select class="form-control" name="cardType" id="cardType">
                         <option>artifact</option>
                         <option>conspiracy</option>
                         <option>creature</option>
@@ -387,7 +387,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="rarity">Rarity</label>
-                    <select class="form-control" id="rarity">
+                    <select class="form-control" name="rarity" id="rarity">
                         <option>common</option>
                         <option>uncommon</option>
                         <option>rare</option>
@@ -400,7 +400,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="power">Power</label>
-                    <input type="text" class="form-control" id="power">
+                    <input type="text" class="form-control" name="power" id="power">
                     <small id="powerHelp" class="form-text text-muted">If power is represented by X, please enter X.</small>
                 </div>
             </div>
@@ -409,7 +409,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="toughness">Toughness</label>
-                    <input type="text" class="form-control" id="toughness">
+                    <input type="text" class="form-control" name="toughness" id="toughness">
                     <small id="toughnessHelp" class="form-text text-muted">If toughness is represented by X, please enter X.</small>
                 </div>
             </div>
@@ -418,7 +418,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="color">Color</label>
-                    <select class="form-control" id="color">
+                    <select class="form-control" name="color" id="color">
                         <option>Black</option>
                         <option>Blue</option>
                         <option>Colorless</option>
@@ -434,7 +434,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="quantity">Qty</label>
-                    <input type="number" class="form-control" id="quantity">
+                    <input type="text" class="form-control" name="quantity" id="quantity">
                 </div>
             </div>
         </div>

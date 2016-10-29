@@ -20,7 +20,7 @@ public class AddToLibraryDisplay extends HttpServlet {
             throws ServletException, IOException
     {
 
-        String url = "/addToLibraryDisplay.jsp";
+        String url = "/addToLibrary.jsp";
 
         RequestDispatcher dispatcher =
                 getServletContext().getRequestDispatcher(url);

@@ -31,7 +31,7 @@ public class Card {
     @Column(name ="Subtype")
     private String subtype;
 
-    @Column(name ="CardType")
+    @Column(name ="Card_Type")
     private String cardType;
 
     @Column(name ="Rarity")

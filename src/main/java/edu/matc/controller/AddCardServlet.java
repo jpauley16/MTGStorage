@@ -4,22 +4,20 @@ import edu.matc.entity.Card;
 import edu.matc.persistence.CardDao;
 
 import java.io.*;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import javax.servlet.annotation.*;
 
 /**
  * Created by netherskub on 10/29/16.
  */
+
 @WebServlet (name = "cardAddServlet",
-             urlPatterns = {"card-add-servlet"})
+             urlPatterns = {"/card-add-servlet"})
 public class AddCardServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        CardDao dao = new CardDao();
-        Card card = new Card();
 
         String name = request.getParameter("name");
         String manaCost = request.getParameter("cost");
@@ -31,6 +29,12 @@ public class AddCardServlet extends HttpServlet {
         String toughness = request.getParameter("toughness");
         String color = request.getParameter("color");
         int qty = Integer.parseInt(request.getParameter("quantity"));
+
+
+        //Check if card is in the database
+        //If card doesn't exist, add card to database
+        CardDao dao = new CardDao();
+        Card card = new Card();
 
         card.setName(name);
         card.setManaCost(manaCost);
@@ -44,6 +48,10 @@ public class AddCardServlet extends HttpServlet {
         card.setQty(qty);
 
         dao.addCard(card);
+
+        //Else, update card
+
+
 
         String url = "/addToLibrary.jsp";
 
