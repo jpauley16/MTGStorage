@@ -5,7 +5,7 @@
 </div>
 
 <div class="container">
-    <form id="searchLibraryForm">
+    <form id="searchLibraryForm" action="card-add-servlet" method="post">
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
@@ -32,6 +32,7 @@
                         <option>Legendary</option>
                         <option>Ongoing</option>
                         <option>Plane</option>
+                        <option>Planeswalker</option>
                         <option>Snow</option>
                         <option>World</option>
                     </select>
@@ -363,8 +364,8 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="type">Card Type</label>
-                    <select class="form-control" id="type">
+                    <label for="cardType">Card Type</label>
+                    <select class="form-control" id="cardType">
                         <option>artifact</option>
                         <option>conspiracy</option>
                         <option>creature</option>
@@ -413,6 +414,31 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="color">Color</label>
+                    <select class="form-control" id="color">
+                        <option>Black</option>
+                        <option>Blue</option>
+                        <option>Colorless</option>
+                        <option>Green</option>
+                        <option>Mulitcolored</option>
+                        <option>Red</option>
+                        <option>White</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="quantity">Qty</label>
+                    <input type="number" class="form-control" id="quantity">
+                </div>
+            </div>
+        </div>
+
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

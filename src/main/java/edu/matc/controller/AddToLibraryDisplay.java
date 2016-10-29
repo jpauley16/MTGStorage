@@ -19,7 +19,6 @@ public class AddToLibraryDisplay extends HttpServlet {
                       HttpServletResponse response)
             throws ServletException, IOException
     {
-        HttpSession session = request.getSession();
 
         String url = "/addToLibraryDisplay.jsp";
 
