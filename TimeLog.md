@@ -27,4 +27,8 @@
 | 10/15/2016 | Added Form to addToLibrary.jsp | 2hr | Need to fix Div placements (redundant), styling needs work |
 | 10/15/2016 | Attended meetup | 4hr | |
 | 10/16/2016 | Working on presentation | 2hr | |
-|  |  |  | |
+| 10/18/2016 | Working on jsp files | .5hr | During work |
+| 10/18/2016 | Finished a couple jsp content files | 3hr | |
+| 10/22/2016 | Added User class and User dao | 1hr | Copypasta from previous assignment |
+| 10/28/2016 | Working on add a card servlet | .5hr | During Work |
+| 10/29/2016 | Have database access for adding cards through Servlet | 2.5hr | |
