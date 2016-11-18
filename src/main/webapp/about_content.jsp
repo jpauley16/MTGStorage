@@ -1,7 +1,5 @@
-<%@taglib uri="http://matc.edu/taghandler" prefix="pw" %>
 <div class="container">
     <div class="col-md-12">
-        <h1><pw:Hello /></h1>
         <h1 id="pageHeader">About</h1>
     </div>
 </div>
