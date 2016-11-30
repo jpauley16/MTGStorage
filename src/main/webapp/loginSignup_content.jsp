@@ -25,7 +25,7 @@
             <input type="password" name="user_pass" id="newPassword" />
             <br />
             <label for="validatePass">Re-Enter Password:</label>
-            <input type="password" id="validatePass"  />
+            <input type="password" id="validatePass"  /> <!-- ADD JS FOR PASSWORD VALIDATION -->
             <br />
 
             <button type="submit" id="submit" class="submit" name="submit">Sign Up</button>

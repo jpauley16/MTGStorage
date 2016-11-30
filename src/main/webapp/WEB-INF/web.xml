@@ -21,7 +21,7 @@
       <url-pattern>/add-to-library-display</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-      <role-name>registered-user</role-name>
+      <role-name>registeredUser</role-name>
       <role-name>administrator</role-name>
     </auth-constraint>
   </security-constraint>
@@ -32,7 +32,18 @@
       <url-pattern>/remove-from-library-display</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-      <role-name>registered-user</role-name>
+      <role-name>registeredUser</role-name>
+      <role-name>administrator</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>LoginSignupDisplay</web-resource-name>
+      <url-pattern>/login-signup-display</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>registeredUser</role-name>
       <role-name>administrator</role-name>
     </auth-constraint>
   </security-constraint>
@@ -43,7 +54,7 @@
       <url-pattern>/search-library-display</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-      <role-name>registered-user</role-name>
+      <role-name>registeredUser</role-name>
       <role-name>administrator</role-name>
     </auth-constraint>
   </security-constraint>

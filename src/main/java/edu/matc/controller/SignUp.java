@@ -26,11 +26,12 @@ public class SignUp extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String user_name = request.getParameter("user_name");
         String user_pass = request.getParameter("user_pass");
-        UserDao dao = new UserDao();
 
+        UserDao dao = new UserDao();
         User existingUser = dao.getUser(user_name);
 
         if (existingUser == null) {
+
             User user = new User();
             user.setUser_name(user_name);
             user.setUser_pass(user_pass);
@@ -39,8 +40,9 @@ public class SignUp extends HttpServlet{
 
             Role role = new Role();
             role.setUser_name(user_name);
-            role.setRole_name("registered-user");
-            dao.createUserRole(role);
+            role.setRole_name("registeredUser");
+            log.info("Adding role for user.");
+            dao.createRole(role);
 
             String url = "/index.jsp";
             response.sendRedirect(url);

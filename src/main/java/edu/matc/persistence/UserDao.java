@@ -96,8 +96,7 @@ public class UserDao {
     }
 */
 
-    public Role createUserRole(Role role) {
-
+    public String createRole(Role role) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
         try {
@@ -111,6 +110,6 @@ public class UserDao {
         } finally {
             session.close();
         }
-        return role;
+        return role.getUser_name();
     }
 }

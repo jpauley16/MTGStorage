@@ -1,8 +1,7 @@
 package edu.matc.entity;
 
-import org.hibernate.annotations.*;
-import javax.persistence.Id;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Column;
 import javax.persistence.Table;
 /**
