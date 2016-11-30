@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - mtgstorage@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="mtgstorage">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="performance_schema"/>
+    <schema id="5" name="sys"/>
+    <table id="6" parent="1" name="card"/>
+    <table id="7" parent="1" name="user_roles"/>
+    <table id="8" parent="1" name="users"/>
+    <column id="9" parent="6" name="card_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="10" parent="6" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="11" parent="6" name="manaCost">
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="12" parent="6" name="superType">
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="13" parent="6" name="subType">
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="14" parent="6" name="cardType">
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="15" parent="6" name="rarity">
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="16" parent="6" name="power">
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="17" parent="6" name="toughness">
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="18" parent="6" name="color">
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="19" parent="6" name="qty">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="20" parent="6" name="PRIMARY">
+      <columns>card_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="21" parent="7" name="user_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(15)|0</data-type>
+    </column>
+    <column id="22" parent="7" name="role_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(15)|0</data-type>
+    </column>
+    <key id="23" parent="7" name="PRIMARY">
+      <columns>user_name
+role_name</columns>
+      <primary>1</primary>
+    </key>
+    <column id="24" parent="8" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="25" parent="8" name="user_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(15)|0</data-type>
+    </column>
+    <column id="26" parent="8" name="user_pass">
+      <mandatory>1</mandatory>
+      <data-type>varchar(15)|0</data-type>
+    </column>
+    <key id="27" parent="8" name="PRIMARY">
+      <columns>user_id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

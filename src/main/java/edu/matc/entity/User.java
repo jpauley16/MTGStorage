@@ -1,75 +1,69 @@
 package edu.matc.entity;
 
+import org.hibernate.annotations.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
+import javax.persistence.Table;
 /**
  * Created by netherskub on 10/25/16.
  */
+@Entity
+@Table(name = "users")
 public class User {
 
-    private int userid;
-    private String firstName;
-    private String lastName;
-    private String username;
-    private String password;
+    @Id
+    @GeneratedValue(generator ="increment")
+    @GenericGenerator(name ="increment", strategy = "increment")
+    @Column(name ="user_id")
+    private int user_id;
+
+    @Column(name ="user_name")
+    private String user_name;
+
+    @Column(name ="user_pass")
+    private String user_pass;
 
     public User() {
     }
 
-    public User(int userid, String firstName, String lastName, String username, String password) {
-        this.userid = userid;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
-        this.password = password;
+    public User(int userid, String user_name, String user_pass) {
+        this.user_id = userid;
+        this.user_name = user_name;
+        this.user_pass = user_pass;
     }
 
-    public int getUserid() {
-        return userid;
+    public int getUser_id() {
+        return user_id;
     }
 
-    public void setUserid(int userid) {
-        this.userid = userid;
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getUser_name() {
+        return user_name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getUser_pass() {
+        return user_pass;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUser_pass(String user_pass) {
+        this.user_pass = user_pass;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "userid=" + userid +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
+                "userid=" + user_id +
+                ", user_name='" + user_name + '\'' +
+                ", user_pass='" + user_pass + '\'' +
                 '}';
     }
 }

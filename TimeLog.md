@@ -32,3 +32,5 @@
 | 10/22/2016 | Added User class and User dao | 1hr | Copypasta from previous assignment |
 | 10/28/2016 | Working on add a card servlet | .5hr | During Work |
 | 10/29/2016 | Have database access for adding cards through Servlet | 2.5hr | |
+| 11/29/2016 | Added User authentication to project | 1 hr | Need to add sign up section. Restricted access for unregistered users on adding, removing, and viewing cards. About, Index, and View MTG API not restricted. |
+

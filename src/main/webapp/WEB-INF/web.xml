@@ -4,4 +4,52 @@
            xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
            version="3.1">
     <display-name>MTG Storage</display-name>
+
+  <!-- Tell the server to use form-based authentication. -->
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/loginSignup.jsp</form-login-page>
+      <form-error-page>/failedLogin.jsp</form-error-page>
+    </form-login-config>
+  </login-config>
+
+  <!-- Protect everything within the "investing" directory. -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>addToLibrary</web-resource-name>
+      <url-pattern>/add-to-library-display</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>registered-user</role-name>
+      <role-name>administrator</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>removeFromLibrary</web-resource-name>
+      <url-pattern>/remove-from-library-display</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>registered-user</role-name>
+      <role-name>administrator</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>searchLibrary</web-resource-name>
+      <url-pattern>/search-library-display</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>registered-user</role-name>
+      <role-name>administrator</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+
   </web-app>
+
+
+
