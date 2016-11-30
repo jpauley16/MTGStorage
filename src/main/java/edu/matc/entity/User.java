@@ -1,9 +1,7 @@
 package edu.matc.entity;
 
-import org.hibernate.annotations.*;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Column;
 import javax.persistence.Table;
 /**
@@ -14,11 +12,6 @@ import javax.persistence.Table;
 public class User {
 
     @Id
-    @GeneratedValue(generator ="increment")
-    @GenericGenerator(name ="increment", strategy = "increment")
-    @Column(name ="user_id")
-    private int user_id;
-
     @Column(name ="user_name")
     private String user_name;
 
@@ -28,18 +21,9 @@ public class User {
     public User() {
     }
 
-    public User(int userid, String user_name, String user_pass) {
-        this.user_id = userid;
+    public User(String user_name, String user_pass) {
         this.user_name = user_name;
         this.user_pass = user_pass;
-    }
-
-    public int getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
     }
 
     public String getUser_name() {
@@ -61,8 +45,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userid=" + user_id +
-                ", user_name='" + user_name + '\'' +
+                " user_name='" + user_name + '\'' +
                 ", user_pass='" + user_pass + '\'' +
                 '}';
     }

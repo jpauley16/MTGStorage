@@ -1,6 +1,8 @@
 package edu.matc.persistence;
 
 import edu.matc.entity.User;
+import edu.matc.entity.Role;
+
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -12,6 +14,7 @@ import java.util.List;
 /**
  * Created by netherskub on 10/25/16.
  */
+
 public class UserDao {
 
     private final Logger log = Logger.getLogger(this.getClass());
@@ -20,6 +23,7 @@ public class UserDao {
      *
      * @return All users
      */
+/*
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<User>();
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -27,17 +31,18 @@ public class UserDao {
 
         return users;
     }
-
+*/
     /**
      * retrieve a user given their id
      *
-     * @param id the user's id
+     //* @param id the user's id
      * @return user
      */
-    public User getUser(int id) {
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        User user = (User) session.get(User.class, id);
 
+    public User getUser(String user_name) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        User user = (User) session.get(User.class, user_name);
+        log.info("Checking for username in database.");
         return user;
     }
 
@@ -47,11 +52,10 @@ public class UserDao {
      * @param user
      * @return the id of the inserted record
      */
-    public int addUser(User user) {
-        int id = 0;
+
+    public String addUser(User user) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
-
         try {
             tx = session.beginTransaction();
             session.save(user);
@@ -60,20 +64,18 @@ public class UserDao {
             if (tx != null) {
                 tx.rollback();
             }
-            throw e;
         } finally {
             session.close();
         }
 
-        id = user.getUserid();
-
-        return id;
+        return user.getUser_name();
     }
 
     /**
      * delete a user by id
-     * @param id the user's id
+     //* @param id the user's id
      */
+/*
     public void deleteUser(int id) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         User user = (User) session.get(User.class, id);
@@ -92,33 +94,23 @@ public class UserDao {
             session.close();
         }
     }
+*/
 
-    /**
-     * Update the user
-     * @param user
-     */
+    public Role createUserRole(Role role) {
 
-    public void updateUser(User user) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
-
         try {
             tx = session.beginTransaction();
-
-            User updatedUser = (User) session.get(User.class, user.getUserid());
-            updatedUser.setFirstName(user.getFirstName());
-            updatedUser.setLastName(user.getLastName());
-            session.update(updatedUser);
-
+            session.save(role);
             tx.commit();
-
         } catch (HibernateException e) {
-            if (tx != null ) {
+            if (tx != null) {
                 tx.rollback();
             }
-            throw e;
         } finally {
             session.close();
         }
+        return role;
     }
 }

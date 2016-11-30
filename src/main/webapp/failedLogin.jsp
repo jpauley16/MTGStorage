@@ -11,7 +11,7 @@
     <title>Failed Login</title>
 </head>
 <body>
-    Invalid userid/password combination. <br />
+    Invalid username/password combination. <br />
     <a href="loginSignup.jsp">Try again</a>
 </body>
 </html>
