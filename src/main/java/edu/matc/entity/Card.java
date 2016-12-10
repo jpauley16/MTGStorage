@@ -49,6 +49,9 @@ public class Card {
     @Column(name ="Qty")
     private int qty;
 
+    @Column(name ="username")
+    private String username;
+
 
     public Card() {
 
@@ -56,7 +59,7 @@ public class Card {
 
     public Card(int cardKey, String name, String manaCost, String superType,
                 String subtype, String cardType, String rarity, String power, String toughness,
-                String color, int qty) {
+                String color, int qty, String username) {
         this.cardKey = cardKey;
         this.name = name;
         this.manaCost = manaCost;
@@ -68,6 +71,7 @@ public class Card {
         this.toughness = toughness;
         this.color = color;
         this.qty = qty;
+        this.username = username;
     }
 
     public int getCardKey() {
@@ -154,6 +158,10 @@ public class Card {
         this.qty = qty;
     }
 
+    public String getUsername() { return username; }
+
+    public  void setUsername(String username) {this.username = username; }
+
     @Override
     public String toString() {
         return "Card{" +
@@ -167,7 +175,8 @@ public class Card {
                 ", power='" + power + '\'' +
                 ", toughness='" + toughness + '\'' +
                 ", color='" + color + '\'' +
-                ", qty=" + qty +
+                ", qty=" + qty + '\'' +
+                ", username=" + username +
                 '}';
     }
 

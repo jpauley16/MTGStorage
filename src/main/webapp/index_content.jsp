@@ -1,7 +1,8 @@
 <div class="container">
-    <div class="col-md-12">
-        <h1 id="pageHeader">Welcome to MTG Storage</h1>
-    </div>
+    <div class="col-md-10">
+    <h1 id="pageHeader">Welcome to MTG Storage</h1>
+</div>
+
 </div>
 <div class="container">
     <div id="newsContainer" class="col-md-6">

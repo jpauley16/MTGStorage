@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="col-md-12">
+    <div class="col-md-6">
         <h1 id="pageHeader">About</h1>
     </div>
 </div>

@@ -1,7 +1,9 @@
 package edu.matc.controller;
 
 import edu.matc.entity.Card;
+import edu.matc.entity.User;
 import edu.matc.persistence.CardDao;
+import edu.matc.persistence.UserDao;
 
 import java.io.*;
 import javax.servlet.*;
@@ -19,6 +21,11 @@ public class AddCardServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        UserDao dao = new UserDao();
+        User currentUser = dao.getUser(request.getUserPrincipal().getName());
+        String username = currentUser.getUser_name();
+        request.setAttribute("user", currentUser);
+
         String name = request.getParameter("name");
         String manaCost = request.getParameter("cost");
         String superType = request.getParameter("superType");
@@ -31,9 +38,10 @@ public class AddCardServlet extends HttpServlet {
         int qty = Integer.parseInt(request.getParameter("quantity"));
 
 
+
         //Check if card is in the database
         //If card doesn't exist, add card to database
-        CardDao dao = new CardDao();
+        CardDao cardDao = new CardDao();
         Card card = new Card();
 
         card.setName(name);
@@ -46,8 +54,9 @@ public class AddCardServlet extends HttpServlet {
         card.setToughness(toughness);
         card.setColor(color);
         card.setQty(qty);
+        card.setUsername(username);
 
-        dao.addCard(card);
+        cardDao.addCard(card);
 
         //Else, update card
 

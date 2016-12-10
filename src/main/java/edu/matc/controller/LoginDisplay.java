@@ -9,10 +9,10 @@ import javax.servlet.annotation.*;
 
 
 @WebServlet (
-        name = "loginSignupDisplay",
-        urlPatterns = {"/login-signup-display"}
+        name = "loginDisplay",
+        urlPatterns = {"/login-display"}
 )
-public class LoginSignupDisplay extends HttpServlet {
+public class LoginDisplay extends HttpServlet {
 
 
     public void doGet(HttpServletRequest request,
@@ -21,7 +21,7 @@ public class LoginSignupDisplay extends HttpServlet {
     {
         HttpSession session = request.getSession();
 
-        String url = "/loginSignup.jsp";
+        String url = "/login.jsp";
 
         RequestDispatcher dispatcher =
                 getServletContext().getRequestDispatcher(url);

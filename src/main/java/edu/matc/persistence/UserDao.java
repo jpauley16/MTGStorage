@@ -106,6 +106,7 @@ public class UserDao {
         } catch (HibernateException e) {
             if (tx != null) {
                 tx.rollback();
+                log.info(e);
             }
         } finally {
             session.close();

@@ -1,8 +1,5 @@
 package edu.matc.controller;
 
-import edu.matc.persistence.UserDao;
-import edu.matc.entity.User;
-
 import java.io.*;
 import java.util.*;
 import javax.servlet.*;
@@ -12,18 +9,19 @@ import javax.servlet.annotation.*;
 
 
 @WebServlet (
-        name = "aboutDisplay",
-        urlPatterns = {"/about-display"}
+        name = "loginSignupDisplay",
+        urlPatterns = {"/signup-display"}
 )
-public class AboutDisplay extends HttpServlet {
+public class SignupDisplay extends HttpServlet {
 
 
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
             throws ServletException, IOException
     {
+        HttpSession session = request.getSession();
 
-        String url = "/about.jsp";
+        String url = "/signup.jsp";
 
         RequestDispatcher dispatcher =
                 getServletContext().getRequestDispatcher(url);

@@ -1,6 +1,9 @@
 <div class="container">
     <div class="col-md-12">
-        <h2 id="pageHeader">Add to Library</h2>
+        <h2 id="pageHeader">Add/Update Card</h2>
+    </div>
+    <div class="col-md-6">
+        <p id="userDisplayName">Signed in as: ${user.user_name}</p>
     </div>
 </div>
 

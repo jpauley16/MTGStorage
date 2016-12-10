@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 import org.apache.log4j.Logger;
 
@@ -23,14 +24,16 @@ public class SignUp extends HttpServlet{
     private final Logger log = Logger.getLogger(this.getClass());
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
         String user_name = request.getParameter("user_name");
         String user_pass = request.getParameter("user_pass");
 
         UserDao dao = new UserDao();
-        User existingUser = dao.getUser(user_name);
-
-        if (existingUser == null) {
+        User userExist = dao.getUser(user_name);
+        System.out.println(userExist);
+        if (userExist == null) {
 
             User user = new User();
             user.setUser_name(user_name);
@@ -38,14 +41,14 @@ public class SignUp extends HttpServlet{
             log.info("Adding User: " + user_name);
             dao.addUser(user);
 
+
             Role role = new Role();
             role.setUser_name(user_name);
             role.setRole_name("registeredUser");
             log.info("Adding role for user.");
             dao.createRole(role);
 
-            String url = "/index.jsp";
-            response.sendRedirect(url);
+            response.sendRedirect("index.jsp");
         } else {
             response.sendError(400, "Username taken");
         }

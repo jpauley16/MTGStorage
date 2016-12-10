@@ -15,7 +15,6 @@ public class Role {
     @Column(name ="user_name")
     private String user_name;
 
-    @Id
     @Column(name ="role_name")
     private String role_name;
 

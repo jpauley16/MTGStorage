@@ -33,6 +33,13 @@ public class CardDao {
         return card;
     }
 
+    public Card getCardByName(String name) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Card card = (Card) session.get(Card.class, name);
+
+        return card;
+    }
+
     public int addCard(Card card) {
         int cardKey = 0;
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -46,7 +53,7 @@ public class CardDao {
             if (tx != null) {
                 tx.rollback();
             }
-            throw e;
+            log.info(e);
         } finally {
             session.close();
         }

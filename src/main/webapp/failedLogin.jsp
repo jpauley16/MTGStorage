@@ -12,6 +12,6 @@
 </head>
 <body>
     Invalid username/password combination. <br />
-    <a href="loginSignup.jsp">Try again</a>
+    <a href="signup.jsp">Try again</a>
 </body>
 </html>

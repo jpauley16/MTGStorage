@@ -9,12 +9,23 @@
   <login-config>
     <auth-method>FORM</auth-method>
     <form-login-config>
-      <form-login-page>/loginSignup.jsp</form-login-page>
+      <form-login-page>/login.jsp</form-login-page>
       <form-error-page>/failedLogin.jsp</form-error-page>
     </form-login-config>
   </login-config>
 
-  <!-- Protect everything within the "investing" directory. -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>login</web-resource-name>
+      <url-pattern>/login-display</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>registeredUser</role-name>
+      <role-name>administrator</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>addToLibrary</web-resource-name>
@@ -28,8 +39,8 @@
 
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>removeFromLibrary</web-resource-name>
-      <url-pattern>/remove-from-library-display</url-pattern>
+      <web-resource-name>signout</web-resource-name>
+      <url-pattern>/signOut</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>registeredUser</role-name>
@@ -39,8 +50,8 @@
 
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>LoginSignupDisplay</web-resource-name>
-      <url-pattern>/login-signup-display</url-pattern>
+      <web-resource-name>removeFromLibrary</web-resource-name>
+      <url-pattern>/remove-from-library-display</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>registeredUser</role-name>

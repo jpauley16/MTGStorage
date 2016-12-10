@@ -12,7 +12,10 @@
             <li><a href="add-to-library-display">Add To Library</a></li>
             <li><a href="remove-from-library-display">Remove From Library</a></li>
             <li><a href="about-display">About</a></li>
-            <li><a href="login-signup-display">Login/Sign Up!</a></li>
+            <li><a href="login-display">Login</a></li>
+            <li><a href="signOut">Sign Out</a></li>
+            <li><a href="signup-display">Sign Up!</a></li>
+
         </ul>
     </div>
 </div>
