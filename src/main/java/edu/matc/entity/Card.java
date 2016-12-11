@@ -16,37 +16,37 @@ public class Card {
     @Id
     @GeneratedValue(generator ="increment")
     @GenericGenerator(name ="increment", strategy = "increment")
-    @Column(name ="Card_Key")
+    @Column(name ="card_id")
     private int cardKey;
 
-    @Column(name ="Name")
+    @Column(name ="name")
     private String name;
 
-    @Column(name ="Mana_Cost")
+    @Column(name ="manaCost")
     private String manaCost;
 
-    @Column(name ="Super_Type")
+    @Column(name ="superType")
     private String superType;
 
-    @Column(name ="Subtype")
-    private String subtype;
+    @Column(name ="subType")
+    private String subType;
 
-    @Column(name ="Card_Type")
+    @Column(name ="cardType")
     private String cardType;
 
-    @Column(name ="Rarity")
+    @Column(name ="rarity")
     private String rarity;
 
-    @Column(name ="Power")
+    @Column(name ="power")
     private String power;
 
-    @Column(name ="Toughness")
+    @Column(name ="toughness")
     private String toughness;
 
-    @Column(name ="Color")
+    @Column(name ="color")
     private String color;
 
-    @Column(name ="Qty")
+    @Column(name ="qty")
     private int qty;
 
     @Column(name ="username")
@@ -58,13 +58,13 @@ public class Card {
     }
 
     public Card(int cardKey, String name, String manaCost, String superType,
-                String subtype, String cardType, String rarity, String power, String toughness,
+                String subType, String cardType, String rarity, String power, String toughness,
                 String color, int qty, String username) {
         this.cardKey = cardKey;
         this.name = name;
         this.manaCost = manaCost;
         this.superType = superType;
-        this.subtype = subtype;
+        this.subType = subType;
         this.cardType = cardType;
         this.rarity = rarity;
         this.power = power;
@@ -106,13 +106,9 @@ public class Card {
         this.superType = superType;
     }
 
-    public String getSubtype() {
-        return subtype;
-    }
+    public String getSubType() { return subType; }
 
-    public void setSubtype(String subtype) {
-        this.subtype = subtype;
-    }
+    public void setSubType(String subType) { this.subType = subType; }
 
     public String getCardType() { return cardType; }
 
@@ -169,7 +165,7 @@ public class Card {
                 ", name='" + name + '\'' +
                 ", manaCost='" + manaCost + '\'' +
                 ", superType='" + superType + '\'' +
-                ", subtype='" + subtype + '\'' +
+                ", subType='" + subType + '\'' +
                 ", cardType='" + cardType + '\'' +
                 ", rarity='" + rarity + '\'' +
                 ", power='" + power + '\'' +

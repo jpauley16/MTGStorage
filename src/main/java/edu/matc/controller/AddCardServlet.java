@@ -24,7 +24,6 @@ public class AddCardServlet extends HttpServlet {
         UserDao dao = new UserDao();
         User currentUser = dao.getUser(request.getUserPrincipal().getName());
         String username = currentUser.getUser_name();
-        request.setAttribute("user", currentUser);
 
         String name = request.getParameter("name");
         String manaCost = request.getParameter("cost");
@@ -47,7 +46,7 @@ public class AddCardServlet extends HttpServlet {
         card.setName(name);
         card.setManaCost(manaCost);
         card.setSuperType(superType);
-        card.setSubtype(subType);
+        card.setSubType(subType);
         card.setCardType(cardType);
         card.setRarity(rarity);
         card.setPower(power);
@@ -62,7 +61,7 @@ public class AddCardServlet extends HttpServlet {
 
 
 
-        String url = "/addToLibrary.jsp";
+        String url = "/add-to-library-display";
 
         response.sendRedirect(url);
 

@@ -6,9 +6,12 @@ import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by netherskub on 9/21/16.
@@ -18,12 +21,27 @@ public class CardDao {
     private final Logger log = Logger.getLogger(this.getClass());
 
 
-    public List<Card> getAllCards() {
+    public Set<Card> getCardByUsernameAndName(String username, String name) {
         List<Card> cards = new ArrayList<Card>();
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        cards = session.createCriteria(Card.class).list();
+        Session session = SessionFactoryProvider.getSessionFactory().getCurrentSession();
 
-        return cards;
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            cards = (List<Card>) session.createCriteria(Card.class)
+                    .add(Restrictions.eq("username", username))
+                    .add(Restrictions.eq("name", name))
+                    .list();
+            log.info("getting card by username and name");
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            log.error(e);
+        } finally {
+            log.info("card recevied");
+        }
+
+        return new HashSet<Card>(cards);
     }
 
     public Card getCard(int cardKey) {
@@ -40,14 +58,14 @@ public class CardDao {
         return card;
     }
 
-    public int addCard(Card card) {
-        int cardKey = 0;
+    public Card addCard(Card card) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
 
         try {
             tx = session.beginTransaction();
             session.save(card);
+            log.info("adding card to database");
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -55,12 +73,11 @@ public class CardDao {
             }
             log.info(e);
         } finally {
+            log.info("Card added");
             session.close();
         }
 
-        cardKey = card.getCardKey();
-
-        return cardKey;
+        return card;
     }
 
     public void deleteCard(int cardKey) {
@@ -93,7 +110,7 @@ public class CardDao {
             updatedCard.setName(card.getName());
             updatedCard.setManaCost(card.getManaCost());
             updatedCard.setSuperType(card.getSuperType());
-            updatedCard.setSubtype(card.getSubtype());
+            updatedCard.setSubType(card.getSubType());
             updatedCard.setRarity(card.getRarity());
             updatedCard.setPower(card.getPower());
             updatedCard.setToughness(card.getToughness());

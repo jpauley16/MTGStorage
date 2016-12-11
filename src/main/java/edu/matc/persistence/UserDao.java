@@ -41,8 +41,18 @@ public class UserDao {
 
     public User getUser(String user_name) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        User user = (User) session.get(User.class, user_name);
-        log.info("Checking for username in database.");
+
+        User user = null;
+
+        try {
+            user = (User) session.get(User.class, user_name);
+            log.info("Checking for username in database.");
+        } catch (HibernateException e) {
+            log.error(e);
+        } finally {
+            session.close();
+        }
+
         return user;
     }
 
