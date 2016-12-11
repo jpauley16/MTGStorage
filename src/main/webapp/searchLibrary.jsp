@@ -15,7 +15,7 @@
         <h2 id="pageHeader">Search for Card</h2>
     </div>
     <div class="col-md-6">
-        <p id="userDisplayName">${user}</p>
+        <Strong><p id="userDisplayName">${user}</Strong</p>
     </div>
 </div>
 

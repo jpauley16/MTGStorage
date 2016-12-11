@@ -1,9 +1,23 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <div class="container">
-    <div class="col-md-6">
-        <h2 id="pageHeader">Add/Update Card</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <p id="userDisplayName"><Strong>${user}</Strong></p>
+        </div>
     </div>
-    <div class="col-md-6">
-        <p id="userDisplayName">${user}</p>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Add/Update Card</h2>
+        </div>
+        <div class="col-md-6">
+            <c:if test="${cardAddMessage != null}">
+                <h2 id="cardMessage"><Strong>${cardAddMessage}</Strong></h2>
+            </c:if>
+            <c:if test="${cardUpdateMessage != null}">
+                <h2 id="cardMessage"><Strong>${cardUpdateMessage}</Strong></h2>
+            </c:if>
+        </div>
     </div>
 </div>
 

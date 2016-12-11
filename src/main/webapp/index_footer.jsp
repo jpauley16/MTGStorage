@@ -1,4 +1,5 @@
-<div id="footer" class="col-md-12">
+<footer class="container-fluid text-center">
     <hr />
-    <p>Project is intended for personal and educational use. Wizards of the Coast has no affiliation with this applicaiton.</p>
-</div>
+    <p>Website is used for personal and educational purposes only. Wizards of the Coast is
+        not affiliated with this project in any way.</p>
+</footer>

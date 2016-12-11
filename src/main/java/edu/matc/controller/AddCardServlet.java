@@ -4,8 +4,12 @@ import edu.matc.entity.Card;
 import edu.matc.entity.User;
 import edu.matc.persistence.CardDao;
 import edu.matc.persistence.UserDao;
+import org.apache.log4j.Logger;
 
 import java.io.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -18,8 +22,12 @@ import javax.servlet.annotation.*;
              urlPatterns = {"/card-add-servlet"})
 public class AddCardServlet extends HttpServlet {
 
+    private final Logger log = Logger.getLogger(this.getClass());
+
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        HttpSession session = request.getSession();
 
         UserDao dao = new UserDao();
         User currentUser = dao.getUser(request.getUserPrincipal().getName());
@@ -36,34 +44,40 @@ public class AddCardServlet extends HttpServlet {
         String color = request.getParameter("color");
         int qty = Integer.parseInt(request.getParameter("quantity"));
 
-
-
-        //Check if card is in the database
-        //If card doesn't exist, add card to database
         CardDao cardDao = new CardDao();
-        Card card = new Card();
+        Set<Card> card = cardDao.getCardByUsernameAndName(username, name);
+        log.info(card.toString());
+        if (card.size() == 0)
+        {
+            Card newCard = new Card();
 
-        card.setName(name);
-        card.setManaCost(manaCost);
-        card.setSuperType(superType);
-        card.setSubType(subType);
-        card.setCardType(cardType);
-        card.setRarity(rarity);
-        card.setPower(power);
-        card.setToughness(toughness);
-        card.setColor(color);
-        card.setQty(qty);
-        card.setUsername(username);
+            newCard.setName(name);
+            newCard.setManaCost(manaCost);
+            newCard.setSuperType(superType);
+            newCard.setSubType(subType);
+            newCard.setCardType(cardType);
+            newCard.setRarity(rarity);
+            newCard.setPower(power);
+            newCard.setToughness(toughness);
+            newCard.setColor(color);
+            newCard.setQty(qty);
+            newCard.setUsername(username);
 
-        cardDao.addCard(card);
+            cardDao.addCard(newCard);
 
-        //Else, update card
+            session.setAttribute("cardAddMessage", "Card successfully entered!");
+
+            String url = "/add-to-library-display";
+
+            response.sendRedirect(url);
+        }
+        else
+        {
 
 
+            String url = "/add-to-library-display";
 
-        String url = "/add-to-library-display";
-
-        response.sendRedirect(url);
-
+            response.sendRedirect(url);
+        }
     }
 }

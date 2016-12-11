@@ -19,19 +19,6 @@ public class UserDao {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
-    /** Return a list of all users
-     *
-     * @return All users
-     */
-/*
-    public List<User> getAllUsers() {
-        List<User> users = new ArrayList<User>();
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        users = session.createCriteria(User.class).list();
-
-        return users;
-    }
-*/
     /**
      * retrieve a user given their id
      *
@@ -80,31 +67,6 @@ public class UserDao {
 
         return user.getUser_name();
     }
-
-    /**
-     * delete a user by id
-     //* @param id the user's id
-     */
-/*
-    public void deleteUser(int id) {
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        User user = (User) session.get(User.class, id);
-        Transaction tx = null;
-
-        try {
-            tx = session.beginTransaction();
-            session.delete(user);
-            tx.commit();
-        } catch (HibernateException e) {
-            if (tx != null) {
-                tx.rollback();
-            }
-            throw e;
-        } finally {
-            session.close();
-        }
-    }
-*/
 
     public String createRole(Role role) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();

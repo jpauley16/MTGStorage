@@ -20,6 +20,49 @@ public class CardDao {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
+    public List<Card> getAllCards() {
+        List<Card> cards = new ArrayList<Card>();
+        Session session = SessionFactoryProvider.getSessionFactory().getCurrentSession();
+
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            cards = session.createCriteria(Card.class).list();
+            log.info("getting all cards");
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) tx.rollback();
+            log.error(e);
+        } finally {
+            log.info("all cards received");
+        }
+
+        return cards;
+    }
+
+    public Set<Card> getAllCardsByUsername(String username) {
+
+        List<Card> cards = new ArrayList<Card>();
+        Session session = SessionFactoryProvider.getSessionFactory().getCurrentSession();
+
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+
+            cards = (List<Card>) session.createCriteria(Card.class)
+                    .add(Restrictions.eq("username", username))
+                    .list();
+            log.info("getting all cards by username");
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) tx.rollback();
+            log.error(e);
+        } finally {
+            log.info("all cards received");
+        }
+
+        return new HashSet<Card>(cards);
+    }
 
     public Set<Card> getCardByUsernameAndName(String username, String name) {
         List<Card> cards = new ArrayList<Card>();
@@ -38,7 +81,7 @@ public class CardDao {
             if (tx!=null) tx.rollback();
             log.error(e);
         } finally {
-            log.info("card recevied");
+            log.info("card received");
         }
 
         return new HashSet<Card>(cards);
@@ -47,13 +90,6 @@ public class CardDao {
     public Card getCard(int cardKey) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Card card = (Card) session.get(Card.class, cardKey);
-
-        return card;
-    }
-
-    public Card getCardByName(String name) {
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        Card card = (Card) session.get(Card.class, name);
 
         return card;
     }
@@ -96,6 +132,7 @@ public class CardDao {
             throw e;
         } finally {
             session.close();
+            log.info("Card deleted");
         }
     }
 
