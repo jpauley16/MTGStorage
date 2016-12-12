@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <br /><br />
 <div class="container">
-    <form id="searchMTGForm" action="/search-mtg-servlet" method="GET">
+    <form id="searchMTGForm" action="${root}/search-mtg-servlet" method="GET">
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">

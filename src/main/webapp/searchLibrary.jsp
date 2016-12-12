@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 <c:set var="pageTitle" value="Search Library" scope="request" />
+<c:set var="root" value="${pageContext.request.contextPath}" scope="request" />
 
 <c:import url="index_head.jsp" />
 
@@ -21,7 +22,7 @@
 
 
 <div class="container">
-    <form id="searchLibraryForm" action="/search-card-servlet" method="GET">
+    <form id="searchLibraryForm" action="${root}/search-card-servlet" method="GET">
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">

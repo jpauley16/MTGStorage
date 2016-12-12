@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <form id="signUp" action="/sign-up" method="post">
+            <form id="signUp" action="${root}/sign-up" method="post">
                 <h2>Sign Up</h2>
                 <br />
                 <label for="UserName">Username:</label>

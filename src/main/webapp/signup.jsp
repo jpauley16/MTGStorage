@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 <c:set var="pageTitle" value="Login/SignUp" scope="request" />
-
+<c:set var="root" value="${pageContext.request.contextPath}" scope="request" />
 <c:import url="index_head.jsp" />
 
 <body>
