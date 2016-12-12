@@ -13,13 +13,38 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-
+<br />
+<c:if test="${cardDetailError != null}">
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <c:if test="${cardSearched != null}">
-                <p>${cardSearched}</p>
-            </c:if>
+            <h2>${cardDetailError}</h2>
         </div>
     </div>
 </div>
+</c:if>
+<c:if test="${cardDetail != null}">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+                <Strong><p>Card name: </Strong>${cardDetail.name}</p>
+                <Strong><p>Mana Cost: </Strong>${cardDetail.cost}</p>
+                <Strong><p>Types: </Strong>${cardDetail.types}</p>
+                <Strong><p>Subtype: </Strong>${cardDetail.subtypes}</p>
+                <Strong><p>Color(s): </Strong>${cardDetail.colors}</p>
+                <Strong><p>Description: </Strong>${cardDetail.text}</p>
+                <Strong><p>Power: </Strong>${cardDetail.power}</p>
+                <Strong><p>Toughness: </Strong>${cardDetail.toughness}</p>
+                <Strong><p>Loyalty: </Strong>${cardDetail.loyalty}</p>
+                <Strong><p>Formats: </Strong></p>
+                <ul>
+                    <Strong>Commander: </Strong><li>${cardDetail.formats.commander}</li>
+                    <Strong>Legacy: </Strong><li>${cardDetail.formats.legacy}</li>
+                    <Strong>Vintage: </Strong><li>${cardDetail.formats.vintage}</li>
+                    <Strong>Modern: </Strong><li>${cardDetail.formats.modern}</li>
+                </ul>
+                <Strong><p>Buy at url: </Strong>${cardDetail.storeUrl}</p>
+        </div>
+    </div>
+</div>
+</c:if>

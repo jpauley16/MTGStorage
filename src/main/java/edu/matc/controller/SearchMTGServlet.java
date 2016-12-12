@@ -2,6 +2,7 @@ package edu.matc.controller;
 
 import java.io.*;
 import java.net.URLEncoder;
+import java.util.List;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -11,6 +12,7 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
 import com.deckbrew.Response;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.log4j.Logger;
 /**
@@ -30,24 +32,26 @@ public class SearchMTGServlet extends HttpServlet {
 
         Client client = ClientBuilder.newClient();
         String url = "http://api.deckbrew.com/mtg/cards";
-        url += "?name="     + URLEncoder.encode(nameVal, "UTF-8");
+        url += "?name=" + URLEncoder.encode(nameVal, "UTF-8");
         WebTarget target = client.target(url);
         String serviceResponse = target.request(MediaType.APPLICATION_JSON).get(String.class);
-        //log.info(serviceResponse);
 
         ObjectMapper mapper = new ObjectMapper();
-
-        Response results = mapper.readValue(serviceResponse, Response.class);
+        List<Response> results = mapper.readValue(serviceResponse, new TypeReference<List<Response>>() {});
         log.info(results);
-        //List<Results> results = mapper.readValue(serviceResponse, new TypeReference<List<Results>>() {});
 
-        //Results results = mapper.readValue(serviceResponse, Results.class);
-        //ResultsItem resultsItem = results.getResults().get(0);
-        //log.info(results);
-
+        if(results.size() > 0)
+        {
+            Response responseItem = results.get(0);
+            log.info("Response object: " + responseItem);
+            request.setAttribute("cardDetail", responseItem);
+        }
+        else
+        {
+            request.setAttribute("cardDetailError", "Card not found");
+        }
 
         String urlForward = "/searchMTGCards.jsp";
-
         RequestDispatcher dispatcher =
                 getServletContext().getRequestDispatcher(urlForward);
         dispatcher.forward(request, response);

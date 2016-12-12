@@ -15,6 +15,12 @@ public class Formats{
 	@JsonProperty("vintage")
 	private String vintage;
 
+	@JsonProperty("modern")
+	private String modern;
+
+	@JsonProperty("standard")
+	private String standard;
+
 	public void setCommander(String commander){
 		this.commander = commander;
 	}
@@ -37,5 +43,21 @@ public class Formats{
 
 	public String getVintage(){
 		return vintage;
+	}
+
+	public void setModern(String modern){
+		this.modern = modern;
+	}
+
+	public String getModern(){
+		return modern;
+	}
+
+	public void setStandard(String standard){
+		this.standard = standard;
+	}
+
+	public String getStandard(){
+		return standard;
 	}
 }

@@ -16,6 +16,9 @@ public class Response{
 	@JsonProperty("formats")
 	private Formats formats;
 
+	@JsonProperty("supertypes")
+	private List<String> supertypes;
+
 	@JsonProperty("url")
 	private String url;
 
@@ -48,6 +51,9 @@ public class Response{
 
 	@JsonProperty("toughness")
 	private String toughness;
+
+	@JsonProperty("loyalty")
+	private int loyalty;
 
 	public void setTypes(List<String> types){
 		this.types = types;
@@ -95,6 +101,14 @@ public class Response{
 
 	public String getStoreUrl(){
 		return storeUrl;
+	}
+
+	public void setSupertypes(List<String> supertypes){
+		this.supertypes = supertypes;
+	}
+
+	public List<String> getSupertypes(){
+		return supertypes;
 	}
 
 	public void setSubtypes(List<String> subtypes){
@@ -160,4 +174,8 @@ public class Response{
 	public String getToughness(){
 		return toughness;
 	}
+
+	public int getLoyalty() { return loyalty; }
+
+	public void setLoyalty(int loyalty) { this.loyalty = loyalty; }
 }
