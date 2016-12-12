@@ -44,13 +44,13 @@
                     <c:if test="${card.manaCost != null}">
                         <p><strong>Mana Cost: </strong>${card.manaCost}</p>
                     </c:if>
-                    <c:if test="${card.superType != null}">
+                    <c:if test="${card.superType != '' || card.superType != 'Choose One..'}">
                         <p><strong>Super Type: </strong>${card.superType}</p>
                     </c:if>
-                    <c:if test="${card.subType != 'Choose One..'}">
+                    <c:if test="${card.subType != '' || card.subType != 'Choose One..'}">
                         <p><strong>Sub Type: </strong>${card.subType}</p>
                     </c:if>
-                    <c:if test="${card.cardType != null}">
+                    <c:if test="${card.cardType != '' || card.cardType != 'Choose One..'}">
                         <p><strong>Card Type: </strong>${card.cardType}</p>
                     </c:if>
                     <p><strong>Rarity: </strong>${card.rarity}</p>
@@ -60,7 +60,9 @@
                     <c:if test="${card.toughness != ''}">
                         <p><strong>Toughness: </strong>${card.toughness}</p>
                     </c:if>
-                    <p><strong>Color: </strong>${card.color}</p>
+                    <c:if test="${card.color != 'Choose One..'}">
+                        <p><strong>Color: </strong>${card.color}</p>
+                    </c:if>
                     <p><strong>Quantity: </strong>${card.qty}</p>
             </c:forEach>
 

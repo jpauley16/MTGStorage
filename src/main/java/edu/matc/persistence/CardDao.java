@@ -165,6 +165,7 @@ public class CardDao {
             throw e;
         } finally {
             session.close();
+            log.info("Updated Card!");
         }
     }
 

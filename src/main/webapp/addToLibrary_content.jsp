@@ -46,6 +46,7 @@
                     <label for="superType">Select Super-Type</label>
                     <select class="form-control" name="superType" id="superType">
                         <option>Choose One..</option>
+                        <option></option>
                         <option>Basic</option>
                         <option>Legendary</option>
                         <option>Ongoing</option>
@@ -63,6 +64,7 @@
                     <label for="subType">Select Sub-Type</label>
                     <select class="form-control" name="subType" id="subType">
                         <option>Choose One..</option>
+                        <option></option>
                         <option>Advisor</option>
                         <option>Aetherborn</option>
                         <option>Ajani</option>
@@ -386,6 +388,7 @@
                     <label for="cardType">Card Type</label>
                     <select class="form-control" name="cardType" id="cardType">
                         <option>Choose One..</option>
+                        <option></option>
                         <option>Artifact</option>
                         <option>Conspiracy</option>
                         <option>Creature</option>

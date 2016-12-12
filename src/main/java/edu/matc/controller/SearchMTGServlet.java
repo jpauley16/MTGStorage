@@ -10,6 +10,8 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
+import com.deckbrew.Response;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.log4j.Logger;
 /**
  * Created by netherskub on 12/11/16.
@@ -28,11 +30,20 @@ public class SearchMTGServlet extends HttpServlet {
 
         Client client = ClientBuilder.newClient();
         String url = "http://api.deckbrew.com/mtg/cards";
-        url += "?name=" + URLEncoder.encode(nameVal, "UTF-8");
+        url += "?name="     + URLEncoder.encode(nameVal, "UTF-8");
         WebTarget target = client.target(url);
         String serviceResponse = target.request(MediaType.APPLICATION_JSON).get(String.class);
-        log.info(serviceResponse);
-        request.setAttribute("cardSearched", serviceResponse);
+        //log.info(serviceResponse);
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        Response results = mapper.readValue(serviceResponse, Response.class);
+        log.info(results);
+        //List<Results> results = mapper.readValue(serviceResponse, new TypeReference<List<Results>>() {});
+
+        //Results results = mapper.readValue(serviceResponse, Results.class);
+        //ResultsItem resultsItem = results.getResults().get(0);
+        //log.info(results);
 
 
         String urlForward = "/searchMTGCards.jsp";

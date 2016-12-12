@@ -46,38 +46,65 @@ public class AddCardServlet extends HttpServlet {
 
         CardDao cardDao = new CardDao();
         Set<Card> card = cardDao.getCardByUsernameAndName(username, name);
-        log.info(card.toString());
-        if (card.size() == 0)
-        {
-            Card newCard = new Card();
+        log.info(card);
 
-            newCard.setName(name);
-            newCard.setManaCost(manaCost);
-            newCard.setSuperType(superType);
-            newCard.setSubType(subType);
-            newCard.setCardType(cardType);
-            newCard.setRarity(rarity);
-            newCard.setPower(power);
-            newCard.setToughness(toughness);
-            newCard.setColor(color);
-            newCard.setQty(qty);
-            newCard.setUsername(username);
+        //works for getting cardKey -> Sol Ring cardkey for admin is 2
+        int cardKey;
+        for(Card cardClass : card) {
+            cardKey = cardClass.getCardKey();
 
-            cardDao.addCard(newCard);
+            if (card.size() == 0)
+            {
+                Card newCard = new Card();
 
-            session.setAttribute("cardAddMessage", "Card successfully entered!");
+                newCard.setName(name);
+                newCard.setManaCost(manaCost);
+                newCard.setSuperType(superType);
+                newCard.setSubType(subType);
+                newCard.setCardType(cardType);
+                newCard.setRarity(rarity);
+                newCard.setPower(power);
+                newCard.setToughness(toughness);
+                newCard.setColor(color);
+                newCard.setQty(qty);
+                newCard.setUsername(username);
 
-            String url = "/add-to-library-display";
+                cardDao.addCard(newCard);
 
-            response.sendRedirect(url);
+                session.setAttribute("cardAddMessage", "Card successfully entered!");
+
+                String url = "/add-to-library-display";
+
+                response.sendRedirect(url);
+            }
+            else
+            {
+
+                Card updateCard = new Card();
+
+                updateCard.setCardKey(cardKey);
+                updateCard.setName(name);
+                updateCard.setManaCost(manaCost);
+                updateCard.setSuperType(superType);
+                updateCard.setSubType(subType);
+                updateCard.setCardType(cardType);
+                updateCard.setRarity(rarity);
+                updateCard.setPower(power);
+                updateCard.setToughness(toughness);
+                updateCard.setColor(color);
+                updateCard.setQty(qty);
+                updateCard.setUsername(username);
+
+                cardDao.updateCard(updateCard);
+
+                session.setAttribute("cardUpdateMessage", "Card successfully updated!");
+
+                String url = "/add-to-library-display";
+
+                response.sendRedirect(url);
+            }
         }
-        else
-        {
 
 
-            String url = "/add-to-library-display";
-
-            response.sendRedirect(url);
-        }
     }
 }
