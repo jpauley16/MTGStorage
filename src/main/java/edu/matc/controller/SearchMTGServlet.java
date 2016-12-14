@@ -53,7 +53,7 @@ public class SearchMTGServlet extends HttpServlet {
 
         String urlForward = "/searchMTGCards.jsp";
         RequestDispatcher dispatcher =
-                getServletContext().getRequestDispatcher(urlForward);
+                request.getRequestDispatcher(urlForward);
         dispatcher.forward(request, response);
 
     }

@@ -35,3 +35,7 @@
 | 11/29/2016 | Added User authentication to project from exercise | 1hr | Need to add sign up section. Restricted access for unregistered users on adding, removing, and viewing cards. About, Index, and View MTG API not restricted. |
 | 11/29/2016 | Modifying User authentication to add new users rather than pre inserted user.| 3hr| I am having a lot of trouble trying to add new users to database. | 
 | 11/30/2016 | Users are now being added to user table in database. User roles, however, will not add when a new user is added | 1hr | |
+| 12/09/2016 | | 10.5hr | | 
+| 12/10/2016 | | 15hr | | 
+| 12/11/2016 | | 9hr | | 
+| 12/13/2016 | | 10.5hr | | 

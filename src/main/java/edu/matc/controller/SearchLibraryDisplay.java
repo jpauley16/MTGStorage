@@ -32,7 +32,7 @@ public class SearchLibraryDisplay extends HttpServlet {
         String url = "/searchLibrary.jsp";
 
         RequestDispatcher dispatcher =
-                getServletContext().getRequestDispatcher(url);
+                request.getRequestDispatcher(url);
         dispatcher.forward(request, response);
     }
 }

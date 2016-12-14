@@ -26,7 +26,6 @@ public class RemoveFromLibraryDisplay extends HttpServlet {
                       HttpServletResponse response)
             throws ServletException, IOException
     {
-        HttpSession session = request.getSession();
 
         UserDao dao = new UserDao();
         User currentUser = dao.getUser(request.getUserPrincipal().getName());
@@ -44,7 +43,7 @@ public class RemoveFromLibraryDisplay extends HttpServlet {
         String url = "/removeFromLibrary.jsp";
 
         RequestDispatcher dispatcher =
-                getServletContext().getRequestDispatcher(url);
+                request.getRequestDispatcher(url);
         dispatcher.forward(request, response);
     }
 }

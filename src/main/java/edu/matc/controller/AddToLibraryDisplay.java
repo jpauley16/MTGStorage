@@ -22,17 +22,17 @@ public class AddToLibraryDisplay extends HttpServlet {
                       HttpServletResponse response)
             throws ServletException, IOException
     {
+        HttpSession session = request.getSession();
 
         UserDao dao = new UserDao();
 
         User currentUser = dao.getUser(request.getUserPrincipal().getName());
         String username = currentUser.getUser_name();
-        request.setAttribute("user", "signed in as: " + username);
+        session.setAttribute("user", "signed in as: " + username);
 
         String url = "/addToLibrary.jsp";
 
-        RequestDispatcher dispatcher =
-                getServletContext().getRequestDispatcher(url);
+        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
         dispatcher.forward(request, response);
     }
 }

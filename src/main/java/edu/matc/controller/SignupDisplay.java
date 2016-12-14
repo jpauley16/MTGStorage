@@ -19,12 +19,11 @@ public class SignupDisplay extends HttpServlet {
                       HttpServletResponse response)
             throws ServletException, IOException
     {
-        HttpSession session = request.getSession();
 
         String url = "/signup.jsp";
 
         RequestDispatcher dispatcher =
-                getServletContext().getRequestDispatcher(url);
+                request.getRequestDispatcher(url);
         dispatcher.forward(request, response);
     }
 }

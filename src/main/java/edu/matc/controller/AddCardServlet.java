@@ -19,7 +19,7 @@ import javax.servlet.annotation.*;
  */
 
 @WebServlet (name = "cardAddServlet",
-             urlPatterns = {"/card-add-servlet"})
+        urlPatterns = {"/card-add-servlet"})
 public class AddCardServlet extends HttpServlet {
 
     private final Logger log = Logger.getLogger(this.getClass());
@@ -48,37 +48,31 @@ public class AddCardServlet extends HttpServlet {
         Set<Card> card = cardDao.getCardByUsernameAndName(username, name);
         log.info(card);
 
-        //works for getting cardKey -> Sol Ring cardkey for admin is 2
-        int cardKey;
-        for(Card cardClass : card) {
-            cardKey = cardClass.getCardKey();
+        if (card.size() == 0)
+        {
+            Card newCard = new Card();
 
-            if (card.size() == 0)
-            {
-                Card newCard = new Card();
+            newCard.setName(name);
+            newCard.setManaCost(manaCost);
+            newCard.setSuperType(superType);
+            newCard.setSubType(subType);
+            newCard.setCardType(cardType);
+            newCard.setRarity(rarity);
+            newCard.setPower(power);
+            newCard.setToughness(toughness);
+            newCard.setColor(color);
+            newCard.setQty(qty);
+            newCard.setUsername(username);
 
-                newCard.setName(name);
-                newCard.setManaCost(manaCost);
-                newCard.setSuperType(superType);
-                newCard.setSubType(subType);
-                newCard.setCardType(cardType);
-                newCard.setRarity(rarity);
-                newCard.setPower(power);
-                newCard.setToughness(toughness);
-                newCard.setColor(color);
-                newCard.setQty(qty);
-                newCard.setUsername(username);
+            cardDao.addCard(newCard);
 
-                cardDao.addCard(newCard);
-
-                session.setAttribute("cardAddMessage", "Card successfully entered!");
-
-                String url = "/add-to-library-display";
-
-                response.sendRedirect(url);
-            }
-            else
-            {
+            request.setAttribute("cardAddMessage", "Card successfully entered!");
+        }
+        else
+        {
+            int cardKey;
+            for(Card cardClass : card) {
+                cardKey = cardClass.getCardKey();
 
                 Card updateCard = new Card();
 
@@ -96,15 +90,14 @@ public class AddCardServlet extends HttpServlet {
                 updateCard.setUsername(username);
 
                 cardDao.updateCard(updateCard);
-
-                session.setAttribute("cardUpdateMessage", "Card successfully updated!");
-
-                String url = "/add-to-library-display";
-
-                response.sendRedirect(url);
             }
+
+            request.setAttribute("cardUpdateMessage", "Card successfully updated!");
         }
 
+        String url = "/addToLibrary.jsp";
+        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+        dispatcher.forward(request, response);
 
     }
 }

@@ -19,7 +19,6 @@ public class SearchMTGDisplay extends HttpServlet {
                       HttpServletResponse response)
             throws ServletException, IOException
     {
-        HttpSession session = request.getSession();
 
         String url = "/searchMTGCards.jsp";
 

@@ -4,6 +4,7 @@ import edu.matc.entity.Card;
 import edu.matc.persistence.CardDao;
 import org.apache.log4j.Logger;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,12 +36,21 @@ public class SearchLibraryServlet extends HttpServlet {
 
         CardDao cardDao = new CardDao();
         Set<Card> card = cardDao.getCardByUsernameAndName(username, name);
-        session.setAttribute("card", card);
 
+        if (card.size() == 0)
+        {
+            session.setAttribute("error", "Card not found");
+        }
+        else
+        {
+            session.setAttribute("card", card);
+        }
 
         String url = "/searchLibrary.jsp";
 
-        response.sendRedirect(url);
+        RequestDispatcher dispatcher =
+                request.getRequestDispatcher(url);
+        dispatcher.forward(request, response);
 
 
     }

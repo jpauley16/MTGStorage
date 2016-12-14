@@ -38,20 +38,24 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10">
+            <hr />
             <br/>
+            <c:if test="${error != null}">
+                <h2><strong>${error}</strong></h2>
+            </c:if>
             <c:forEach var="card" items="${card}">
 
                     <p><strong>Card Name: </strong>${card.name}</p>
                     <c:if test="${card.manaCost != null}">
                         <p><strong>Mana Cost: </strong>${card.manaCost}</p>
                     </c:if>
-                    <c:if test="${card.superType != '' || card.superType != 'Choose One..'}">
+                    <c:if test="${card.superType != 'Choose One..'}">
                         <p><strong>Super Type: </strong>${card.superType}</p>
                     </c:if>
-                    <c:if test="${card.subType != '' || card.subType != 'Choose One..'}">
+                    <c:if test="${card.subType != 'Choose One..'}">
                         <p><strong>Sub Type: </strong>${card.subType}</p>
                     </c:if>
-                    <c:if test="${card.cardType != '' || card.cardType != 'Choose One..'}">
+                    <c:if test="${card.cardType != 'Choose One..'}">
                         <p><strong>Card Type: </strong>${card.cardType}</p>
                     </c:if>
                     <p><strong>Rarity: </strong>${card.rarity}</p>

@@ -20,11 +20,10 @@ public class CardDao {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
-
     public Set<Card> getAllCardsByUsername(String username) {
 
         List<Card> cards = new ArrayList<Card>();
-        Session session = SessionFactoryProvider.getSessionFactory().getCurrentSession();
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
         Transaction tx = null;
         try {
@@ -40,6 +39,7 @@ public class CardDao {
             log.error(e);
         } finally {
             log.info("all cards received");
+            session.close();
         }
 
         return new HashSet<Card>(cards);
@@ -47,7 +47,7 @@ public class CardDao {
 
     public Set<Card> getCardByUsernameAndName(String username, String name) {
         List<Card> cards = new ArrayList<Card>();
-        Session session = SessionFactoryProvider.getSessionFactory().getCurrentSession();
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
         Transaction tx = null;
         try {
@@ -63,6 +63,7 @@ public class CardDao {
             log.error(e);
         } finally {
             log.info("card received");
+            session.close();
         }
 
         return new HashSet<Card>(cards);
