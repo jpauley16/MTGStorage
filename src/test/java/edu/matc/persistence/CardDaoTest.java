@@ -1,19 +1,16 @@
-/*package edu.matc.persistence;
+package edu.matc.persistence;
 
 import edu.matc.entity.Card;
-import org.hibernate.Session;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.List;
+import java.util.Set;
 
 import static org.junit.Assert.*;
 
 /**
  * Created by netherskub on 9/21/16.
+ */
 
-/*
-*
 
 public class CardDaoTest {
 
@@ -26,44 +23,54 @@ public class CardDaoTest {
     }
 
     @Test
-    public void getAllCards() throws Exception {
-        List<Card> cards = dao.getAllCards();
+    public void getCardByUsernameAndName() throws Exception {
+        String username = "admin";
+        String cardName = "Sol Ring";
+        Set<Card> cards = dao.getCardByUsernameAndName(username, cardName);
 
         assertTrue(cards.size() > 0);
     }
 
     @Test
-    public void getCard() throws Exception {
-        Card card = dao.getCard(1);
+    public void getAllCardsByUsername() throws Exception {
+        Set<Card> cards = dao.getAllCardsByUsername("admin");
 
-        assertNotNull("Null. No card by that id in table", card);
+        assertTrue(cards.size() > 0);
     }
 
     @Test
     public void deleteCard() throws Exception {
-        dao.deleteCard(1);
-
-        assertNotNull("Null. No card by that card key");
+        Set<Card> cards = dao.getCardByUsernameAndName("admin", "Test");
+        int cardKey;
+            for(Card cardClass : cards) {
+                cardKey = cardClass.getCardKey();
+                dao.deleteCard(cardKey);
+                assertNotNull("Null. No card by that card key", cardKey);
+            }
     }
+
 
     @Test
     public void addCard() throws Exception {
+        int cardKey = 0;
         Card card = new Card();
-        card.setName("");
-        card.setManaCost("");
-        card.setSuperType("");
-        card.setSubtype("");
-        card.setRarity("");
-        card.setPower("");
-        card.setToughness("");
-        card.setColor("");
+        card.setName("Test");
+        card.setManaCost("4C3G");
+        card.setSuperType("Basic");
+        card.setSubType("Insect");
+        card.setRarity("Rare");
+        card.setPower("2");
+        card.setToughness("2");
+        card.setColor("Green");
+        card.setUsername("admin");
         card.setQty(1);
 
-        int cardKey = dao.addCard(card);
+        cardKey = dao.addCard(card);
 
-        assertEquals("Id equals 2 for new card", 4, cardKey);
+        assertTrue(cardKey > 0);
+        //dao.deleteCard(cardKey);
     }
-
+/*
     @Test
     public void updateCard() throws Exception {
         Card card = new Card();
@@ -72,6 +79,5 @@ public class CardDaoTest {
 
         assertTrue("Changed name is " , card.getName().equals(""));
     }
-
+    */
 }
-*/

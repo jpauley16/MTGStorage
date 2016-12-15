@@ -7,8 +7,6 @@ import edu.matc.persistence.UserDao;
 import org.apache.log4j.Logger;
 
 import java.io.*;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -26,8 +24,6 @@ public class AddCardServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        HttpSession session = request.getSession();
 
         UserDao dao = new UserDao();
         User currentUser = dao.getUser(request.getUserPrincipal().getName());

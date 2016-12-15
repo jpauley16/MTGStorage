@@ -69,7 +69,7 @@ public class CardDao {
         return new HashSet<Card>(cards);
     }
 
-    public Card addCard(Card card) {
+    public int addCard(Card card) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
 
@@ -88,7 +88,7 @@ public class CardDao {
             session.close();
         }
 
-        return card;
+        return card.getCardKey();
     }
 
     public void deleteCard(int cardKey) {

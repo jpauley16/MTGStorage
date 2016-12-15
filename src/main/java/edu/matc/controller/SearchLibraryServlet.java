@@ -39,11 +39,11 @@ public class SearchLibraryServlet extends HttpServlet {
 
         if (card.size() == 0)
         {
-            session.setAttribute("error", "Card not found");
+            request.setAttribute("error", "Card not found");
         }
         else
         {
-            session.setAttribute("card", card);
+            request.setAttribute("card", card);
         }
 
         String url = "/searchLibrary.jsp";
